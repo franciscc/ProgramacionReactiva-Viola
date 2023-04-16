@@ -1,0 +1,25 @@
+.container {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    box-shadow: 1px 1px 5px;
+    height: 98%;
+}
+
+table {
+    padding: 10px;
+}
+
+.post-table {
+    width: 100%;
+}
+  
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}

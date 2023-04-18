@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import Post from 'src/app/posts/models/post.class';
 import { PostsService } from 'src/app/posts/services/posts.service';
 
 @Component({
@@ -8,15 +9,14 @@ import { PostsService } from 'src/app/posts/services/posts.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  dataSource: any[] = [];
+  dataSource: Post[] = [];
   displayedColumns = ['id', 'author', 'title'];
-  data$ = new Observable<any[]>;
 
   constructor(
     private _postsService : PostsService
     ) {}
   ngOnInit(): void {
-    this.data$ = this._postsService.GetAllPosts()
+    this._postsService.GetAllPosts().subscribe(x => this.dataSource = x);
   }
 
 }

@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import Post from '../models/post.class';
+import { AuthorsService } from 'src/app/authors/services/authors.service';
 
 interface IPostsService {
-  GetAllPosts(): Observable<any[]>;
+  GetAllPosts(): Observable<Post[]>;
 }
 
 @Injectable({
@@ -12,10 +14,25 @@ interface IPostsService {
 
 export class PostsService implements IPostsService{
 
-  constructor(private _client : HttpClient) { }
+  constructor(
+    private _client : HttpClient,
+    private _authorService: AuthorsService
+    ) { }
 
-  GetAllPosts(): Observable<any[]> {
-    return this._client.get<any[]>('https://jsonplaceholder.typicode.com/posts');
+  GetAllPosts(): Observable<Post[]> {
+    const response = this._client.get<Post[]>('https://jsonplaceholder.typicode.com/posts')
+    .pipe(
+      map(list => (
+        list.map(x => ({
+          id: x.id,
+          userId: x.userId,
+          author: 'name',
+          title: x.title
+        }))
+      ))
+    );
+    
+    return response;
   }
 
 }

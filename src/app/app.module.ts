@@ -7,6 +7,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { LoginModule } from './login/login.module';
+import { ViewsModule } from './views/views.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    LoginModule,
+    ViewsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

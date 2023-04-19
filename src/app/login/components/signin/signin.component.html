@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="validate" *ngIf="validating; else accessView">
+        <p>Loading...</p>
+        <br>
+        <mat-spinner style="height: 50px; width: 50px;"></mat-spinner>
+    </div>
+
+    <ng-template #accessView>
+        <form [formGroup]='accessForm'>
+            <mat-form-field appearance="fill">
+                <mat-label>Type your name:)</mat-label>
+                <input matInput [formControl]='userControl'>
+                <mat-error *ngIf="userControl.invalid">Required</mat-error>
+            </mat-form-field> 
+            <button mat-raised-button color="primary" (click)="onClick()">Go</button>
+        </form>
+    </ng-template>
+</div>

@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+form {
+    height: 350px;
+    width: 400px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 1px 5px 10px;
+}
+
+.validate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 import { PostsModule } from '../posts/posts.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { PostsModule } from '../posts/posts.module';
     CommonModule,
     MatTableModule,
     MatDialogModule,
-    PostsModule
+    PostsModule,
+    MatPaginatorModule,
   ],
   exports: [
     DashboardComponent

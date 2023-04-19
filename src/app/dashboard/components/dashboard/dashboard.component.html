@@ -1,6 +1,6 @@
 <div class="container">
  
-  <table mat-table [dataSource]="dataSource!" class="mat-elevation-z8 post-table">
+  <table mat-table [dataSource]="dataSource!" class="">
 
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -21,4 +21,5 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openPost(row)"></tr>
 
   </table>
+  <!-- <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
 </div>

@@ -1,0 +1,14 @@
+.container {
+    height: 500px;
+    width: 750px;
+    color: black;
+    display: grid;
+    grid-template-rows: 100px 50px 1fr;
+    align-items: center;
+    
+}
+
+.body {
+    padding: 20px 24px 20px 24px;
+    font-size: 35px;
+}

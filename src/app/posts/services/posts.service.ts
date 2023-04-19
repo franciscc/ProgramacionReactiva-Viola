@@ -26,8 +26,9 @@ export class PostsService implements IPostsService{
         list.map(x => ({
           id: x.id,
           userId: x.userId,
-          author: 'name',
-          title: x.title
+          author: this._authorService.GetAuthor(x.userId)?.name,
+          title: x.title,
+          body: x.body
         }))
       ))
     );
